@@ -18,11 +18,11 @@ class TicTacToe
   ]
 
   def display_board
-    puts " #{board[0]} | #{board[1]} | #{board[2]} "
+    puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
     puts "-----------"
-    puts " #{board[3]} | #{board[4]} | #{board[5]} "
+    puts " #{@board[3]} | #{@board[4]} | #{@board[5]} "
     puts "-----------"
-    puts " #{board[6]} | #{board[7]} | #{board[8]} "
+    puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
   end
 
   def input_to_index(input)
@@ -30,11 +30,11 @@ class TicTacToe
   end
 
   def move(index, character)
-    board[index] = character
+    @board[index] = character
   end
 
   def position_taken?(index)
-    board[index] != " "
+    @board[index] != " "
   end
 
   def valid_move?(index)
@@ -43,7 +43,7 @@ class TicTacToe
 
   def turn_count
     count= 0
-    board.each do |element|
+    @board.each do |element|
       if element != " "
         count+= 1
       end
@@ -72,4 +72,3 @@ class TicTacToe
       @board[i[0]] == @board[i[1]] && @board[i[1]] == @board[i[2]] && position_taken(i[0])
     end
   end
-  
