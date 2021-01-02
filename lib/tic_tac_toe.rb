@@ -29,8 +29,8 @@ class TicTacToe
     input.to_i - 1
   end
 
-  def move(index, token)
-    board[index] = token
+  def move(index, character)
+    board[index] = character
   end
 
   def position_taken?(index)
@@ -52,7 +52,19 @@ class TicTacToe
   end
 
   def current_player
-    turn_count.even? "X" : "O"
+    turn_count.even? "X" : "O" 
+  end
+
+  def turn
+    input= gets.strip
+    index= input_to_index(input)
+    character= current_player
+    if valid_move?(index)
+      move(index, character)
+      display_board
+    else
+      turn
+    end
   end
 
   def 
