@@ -52,7 +52,7 @@ class TicTacToe
   end
 
   def current_player
-    turn_count.even? "X" : "O"
+    turn_count.even? "X":"O"
   end
 
   def turn
@@ -72,5 +72,5 @@ class TicTacToe
       @board[i[0]] == @board[i[1]] && @board[i[1]] == @board[i[2]] && position_taken(i[0])
     end
   end
-  
+
 end
