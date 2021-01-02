@@ -25,4 +25,31 @@ class TicTacToe
     puts " #{board[6]} | #{board[7]} | #{board[8]} "
   end
 
+  def input_to_index(input)
+    input.to_i - 1
+  end
+
+  def move(index, token)
+    board[index] = token
+  end
+
+  def position_taken?(index)
+    board[index] != " "
+  end
+
+  def valid_move?(index)
+    (0..8).include?(index) && !position_taken?(index)
+  end
+
+  def turn_count
+    count= 0
+    board.each do |element|
+      if element != " "
+        count+= 1
+      end
+    end
+    count
+  end
   
+    
+    
