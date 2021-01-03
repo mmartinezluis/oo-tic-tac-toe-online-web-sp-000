@@ -79,5 +79,16 @@ class TicTacToe
 
   def draw?
     full? && !won?
+  end
+
+  def ove?
+    won? || full? || draw?
+  end
+
+  def winner
+    if won?
+      @board[won?[0]]
+    end
+  end
 
 end
